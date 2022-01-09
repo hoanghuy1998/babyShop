@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BABBY SHOP</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/styleGobal.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header class="!direction !spacing banner mt-5">
+        <img src="./resoures/imagebook/bìa web.png" class="h-15 w-100" alt="" />
+      </header>
+      <nav
+        class="navbar navbar-expand-lg navbar-info bg-info text-white mt-4 nav"
+      >
+        <div class="container-fluid">
+          <a class="navbar-brand" href="./index.html">Trang Chủ</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="./introduce.html"
+                  >Giới Thiệu</a
+                >
+              </li>
+
+              <li class="nav-item dropdown active">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Tin Tức Thời Trang
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li>
+                    <a class="dropdown-item" href="./trend.html"
+                      >Xu Hướng Thời Trang</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="./popular.html">
+                      Mẫu Thời Trang Thịnh Hành
+                    </a>
+                  </li>
+                  <li><a class="dropdown-item" href="#">Bé Yêu Tỏa Sáng</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a href="./tutorial.html" class="nav-link"
+                  >Hướng Dẫn Mua Hàng</a
+                >
+              </li>
+            </ul>
+            <a href="./account.html" class="text-capitalize text-success">
+              tài khoản</a
+            >
+          </div>
+        </div>
+      </nav>
+      <main class="row main">
+        <section
+          name="main__sideBar"
+          id="main__sidebar"
+          class="main__sidebar col-md-3 mt-4 rounded"
+        >
+          <div class="list-group align-items-center">
+            <a
+              href="./listProduct.html"
+              onclick="{showList(this)}"
+              class="list-group-item list-group-item-action list-group-item-info text-dark"
+              >Quần Áo Ngày Tết
+              <sup class="badge bg-danger border rounded-circle text-white"
+                >hot</sup
+              ></a
+            >
+            <a
+              href="./listProduct.html"
+              onclick="{showList(this)}"
+              class="list-group-item list-group-item-action list-group-item-info text-dark position-relative"
+              >Thời Trang Mùa Đông
+              <sup
+                class="badge bg-success border rounded-pill text-white position-absolute top-0"
+                >Thịnh Hành</sup
+              ></a
+            >
+            <a
+              href="./listProduct.html"
+              onclick="{showList(this)}"
+              class="list-group-item list-group-item-action list-group-item-info text-dark"
+              >Quần áo Thịnh hành
+            </a>
+            <a
+              href="./listProduct.html"
+              onclick="{showList(this)}"
+              class="list-group-item list-group-item-action list-group-item-info text-dark position-relative"
+              >Mẫu Quần Áo Bán Chạy
+              <sup
+                class="badge bg-primary border rounded-pill text-white position-absolute top-0 right-0"
+                >top rate</sup
+              >
+            </a>
+
+            <a
+              href="./listProduct.html"
+              onclick="{showList(this)}"
+              class="list-group-item list-group-item-action list-group-item-info text-dark"
+              >Thời Trang Mùa Hè
+            </a>
+          </div>
+        </section>
+        <section
+          name="main__home"
+          id="main__home"
+          class="col-md-9 mb-4 main__home"
+        >
+          <h1 class="text-center mt-4 mb-4 text-danger">
+            TẠO NÊN PHONG CÁCH RIÊNG CHO BÉ CHỈ VỚI CHIẾC ÁO THUN KIDSTYLE
+          </h1>
+          <div class="d-flex">
+            <i class="fa fa-calendar" aria-hidden="true"></i>
+            <span class="mx-1 text-dark">19/12/2021</span>
+            <i class="fa fa-user mx-3 me-1" aria-hidden="true"></i>
+            <span class="text-capitalize text-primary">hoàng huy</span>
+          </div>
+          <hr />
+          <div class="row">
+            <img
+              src="https://kidstyle.com.vn/images/blog/5/banner_1.jpg"
+              alt="imagesLunner"
+              class="imagePage h-20"
+            />
+          </div>
+          <div class="row pt-4">
+            <strong
+              >Bạn đã và đang làm những gì để giúp bé yêu trông thật đáng yêu,
+              xinh xắn hay cool ngầu và phong cách qua những bộ quần áo?</strong
+            >
+            <br />
+
+            <p>
+              Bạn đã thử tạo nên sự riêng biệt cho bé qua những chiếc áo thun
+              đơn giản được phối với quần jean, váy, short,..hay chưa?
+            </p>
+            <br />
+
+            <p>
+              Thị trường thời trang trẻ em hiện nay rất đa dạng và phong phú về
+              mẫu mã, chất liệu, phong cách. Chính điều đó đã khiến bạn không
+              biết lựa chọn thế nào cho phù hợp với con yêu của mình. Có rất
+              nhiều bậc phụ huynh vì bận rộn nên không có nhiều thời gian chăm
+              chút cho con em của mình, cũng như không có thời gian mua sắm
+              trang phục cho bé. Họ thường lựa chọn mua hàng online, hay mua
+              những bộ quần áo ở chợ, siêu thị...
+            </p>
+            <br />
+            <p>
+              hế nhưng mua về lại không biết sản phẩm đó có phù hợp với bé hay
+              không, chất lượng như thế nào, thậm chí mua về rồi lại chẳng biết
+              phối đồ sao cho hợp lý. Mua chỉ bởi bạn không mất quá nhiều thời
+              gian để lựa chọn, giá cả thì phải chăng và giao hàng tận nơi.
+            </p>
+            <br />
+          </div>
+        </section>
+      </main>
+    </div>
+    <div class="footer w-100 bg-info pt-4 pb-4">
+      <div class="container">
+        <div class="footer__contact row w-100">
+          <div class="footer__contact--form col-xs-12 col-md-4 p-0 me-0">
+            <h2 class="card-title text-capitalize">liên hệ chúng tôi</h2>
+            <form action="" class="form">
+              <input
+                type="text"
+                name="name"
+                id="name"
+                class="form-control mb-2"
+                placeholder="Họ và tên"
+              />
+              <input
+                type="text"
+                name="email"
+                id="email"
+                class="form-control mb-2"
+                placeholder="Email của bạn"
+              />
+              <input
+                type="text"
+                name=""
+                id="fone"
+                class="form-control mb-2"
+                placeholder="Số điện thoại"
+              />
+              <input
+                type="text"
+                name=""
+                id="talk"
+                class="form-control mb-2"
+                placeholder="lời nói của bạn"
+              />
+              <input
+                type="submit"
+                value="giửi"
+                class="submit btn w-5 text-uppercase fw-bolder btn-dark"
+              />
+            </form>
+          </div>
+          <div
+            class="footer__contact--information col-xs-12 col-md-4 me-0 mt-5 justify-content-center"
+          >
+            <p>
+              <i class="fa fa-map-marker-alt fs-3"></i>
+              <span class="fs-5">Địa điểm</span>
+            </p>
+            <p>
+              <i class="fa fa-phone fs-3"></i>
+              <span class="fs-5">099999999i</span>
+            </p>
+            <p>
+              <i class="fa fa-envelope fs-5"></i>
+              <span class="fs-5">demo@gmail.com</span>
+            </p>
+          </div>
+          <div class="footer__contact--social col-xs-12 col-md-4 ca">
+            <h2 class="card-title text-capitalize">theo chúng tôi</h2>
+            <span>
+              <i class="fab fa-facebook-f fs-4 me-2 text-center"></i>
+              <i class="fab fa-twitter fs-4 me-2"></i>
+              <i class="fab fa-linkedin fs-4 me-2"></i>
+              <i class="fab fa-instagram fs-4 me-2"></i>
+            </span>
+          </div>
+        </div>
+        <div class="hr"></div>
+        <div class="footer__news row mt-4">
+          <h1 class="card-title text-capitalize fw-bolder">bản tin</h1>
+          <div class="row gx-0">
+            <form action="" class="form col">
+              <input
+                class="form-control col-xs-auto"
+                type="email"
+                name="email"
+                id="add"
+                placeholder="E-mail"
+              />
+            </form>
+
+            <label
+              for="add"
+              class="col-xs-auto w-8 btn btn-dark text-white text-uppercase"
+              >đặt mua</label
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

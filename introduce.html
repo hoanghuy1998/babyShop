@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BABBY SHOP</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/styleGobal.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header class="!direction !spacing banner mt-5">
+        <img src="./resoures/imagebook/bìa web.png" class="h-15 w-100" alt="" />
+      </header>
+      <nav
+        class="navbar navbar-expand-lg navbar-info bg-info text-white mt-4 nav"
+      >
+        <div class="container-fluid">
+          <a class="navbar-brand" href="./index.html">Trang Chủ</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="./introduce.html"
+                  >Giới Thiệu</a
+                >
+              </li>
+
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Tin Tức Thời Trang
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li>
+                    <a class="dropdown-item" href="./trend.html"
+                      >Xu Hướng Thời Trang</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="./popular.html">
+                      Mẫu Thời Trang Thịnh Hành
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="./beautiful.html"
+                      >Bé Yêu Tỏa Sáng</a
+                    >
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">Hướng Dẫn Mua Hàng</a>
+              </li>
+            </ul>
+            <a href="./account.html" class="text-capitalize text-success">
+              tài khoản</a
+            >
+          </div>
+        </div>
+      </nav>
+      <main class="row main">
+        <section
+          name="main__sideBar"
+          id="main__sidebar"
+          class="main__sidebar col-md-3 mt-4 rounded"
+        >
+          <div class="list-group align-items-center">
+            <a
+              href="./listProduct.html"
+              onclick="{showList(this)}"
+              class="list-group-item list-group-item-action list-group-item-info text-dark"
+              >Quần Áo Ngày Tết
+              <sup class="badge bg-danger border rounded-circle text-white"
+                >hot</sup
+              ></a
+            >
+            <a
+              href="./listProduct.html"
+              onclick="{showList(this)}"
+              class="list-group-item list-group-item-action list-group-item-info text-dark position-relative"
+              >Thời Trang Mùa Đông
+              <sup
+                class="badge bg-success border rounded-pill text-white position-absolute top-0"
+                >Thịnh Hành</sup
+              ></a
+            >
+            <a
+              href="./listProduct.html"
+              onclick="{showList(this)}"
+              class="list-group-item list-group-item-action list-group-item-info text-dark"
+              >Quần áo Thịnh hành
+            </a>
+            <a
+              href="./listProduct.html"
+              onclick="{showList(this)}"
+              class="list-group-item list-group-item-action list-group-item-info text-dark position-relative"
+              >Mẫu Quần Áo Bán Chạy
+              <sup
+                class="badge bg-primary border rounded-pill text-white position-absolute top-0 right-0"
+                >top rate</sup
+              >
+            </a>
+
+            <a
+              href="./listProduct.html"
+              onclick="{showList(this)}"
+              class="list-group-item list-group-item-action list-group-item-info text-dark"
+              >Thời Trang Mùa Hè
+            </a>
+          </div>
+        </section>
+        <section
+          name="main__home"
+          id="main__home"
+          class="col-md-9 mb-4 main__home"
+        >
+          <div
+            id="carouselExampleControls"
+            class="carousel slide mt-4 rounded-pill"
+            data-bs-ride="carousel"
+          >
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img
+                  src="./resoures/images/imagesLunner/bộáodàibégái-250k.jpg"
+                  class="d-block w-100 m-h-15"
+                  alt="..."
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="./resoures/images/imageSummer/bộbòsữahồng-120k.jpg"
+                  class="d-block w-100 m-h-15"
+                  alt="..."
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="./resoures/images/imageWinter/bộadidasxanhthanbétrai-300k.jpg"
+                  class="d-block w-100 m-h-15"
+                  alt="..."
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="./resoures/images/imageSummer/bộcottoncộc-150k.jpg"
+                  class="d-block w-100 m-h-15"
+                  alt="..."
+                />
+              </div>
+            </div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#carouselExampleControls"
+              data-bs-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#carouselExampleControls"
+              data-bs-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+          <div class="row">
+            <h1
+              class="border rounded-5 text-uppercase fw-border mt-4 bg-gradient text-white bg-danger"
+            >
+              giới thiệu
+            </h1>
+          </div>
+          <div class="row">
+            <p>
+              <a
+                href="./index.html"
+                class="text-uppercase fw-border text-primary"
+              >
+                shop quần áo babyshop</a
+              >
+              gửi tới Quý khách hàng lời chúc sức khỏe và lời chào trân trọng
+              nhất. Chúng tôi xin chân thành cảm ơn Quý khách hàng đã tin tưởng
+              sử dụng các sản phẩm của chúng tôi trong thời gian vừa qua.
+            </p>
+            <br />
+            <p>
+              Chúng tôi chuyên phân phối buôn và lẻ các loại quần áo trẻ em có
+              xuất xứ tại
+              <strong class="text-danger fw-bolder text-uppercase"
+                >việt name</strong
+              >
+              như: quần áo mùa đông, quần áo mùa hè, quần áo tết ,...
+            </p>
+            <p class="text-success">
+              Các Sản phẩm chúng tôi đang phân phối trên thị trường hiện nay
+              luôn đáp ứng các tiêu chí sau:
+            </p>
+            <br />
+            <ul>
+              <li class="text-danger fs-4 mx-5">
+                - Giá cả luôn rẻ nhất thị trường.
+              </li>
+              <li class="text-danger fs-4 mx-5">
+                - Sản phẩm luôn đảm bảo chất lượng chính hãng;
+              </li>
+              <li class="text-danger fs-4 mx-5">
+                - Thông tin sản phẩm rõ ràng, minh bạch, tư vấn cụ thể từng loại
+                hàng;
+              </li>
+            </ul>
+            <p class="text-success fs-5">
+              Xin liên hệ ngay với
+              <a
+                href="./index.html"
+                class="text-uppercase fw-border text-primary"
+              >
+                shop quần áo babyshop</a
+              >
+              để biết thêm thông tin về giá cả sản phẩm: Điện thoại: 0868 017117
+              ~ 0904 245355; Facebook: Phạm Thị Minh Thi
+            </p>
+            <ul type="circle">
+              <li class="text-danger fs-5 mx-4">
+                Quý khách nhận hàng mới thanh toán tiền;
+              </li>
+              <li class="text-danger fs-5 mx-4">
+                Giao hàng trực tiếp với Khách hàng tại Hà Nội;
+              </li>
+              <li class="text-danger fs-5 mx-4">
+                Khách hàng ở tỉnh khác chúng tôi sẽ chuyển phát nhanh theo đường
+                bưu điện;
+              </li>
+              <li class="text-danger fs-5 mx-4">
+                Miễn phí toàn bộ cước vận chuyển đối với khách hàng mua lẻ trên
+                toàn quốc.
+              </li>
+            </ul>
+            <div>
+              <strong class="text-center d-block fs-4"
+                >***Trân trọng cảm ơn sự quan tâm của quý khách hàng***</strong
+              >
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <div class="footer w-100 bg-info pt-4 pb-4">
+      <div class="container">
+        <div class="footer__contact row w-100">
+          <div class="footer__contact--form col-xs-12 col-md-4 p-0 me-0">
+            <h2 class="card-title text-capitalize">liên hệ chúng tôi</h2>
+            <form action="" class="form">
+              <input
+                type="text"
+                name="name"
+                id="name"
+                class="form-control mb-2"
+                placeholder="Họ và tên"
+              />
+              <input
+                type="text"
+                name="email"
+                id="email"
+                class="form-control mb-2"
+                placeholder="Email của bạn"
+              />
+              <input
+                type="text"
+                name=""
+                id="fone"
+                class="form-control mb-2"
+                placeholder="Số điện thoại"
+              />
+              <input
+                type="text"
+                name=""
+                id="talk"
+                class="form-control mb-2"
+                placeholder="lời nói của bạn"
+              />
+              <input
+                type="submit"
+                value="giửi"
+                class="submit btn w-5 text-uppercase fw-bolder btn-dark"
+              />
+            </form>
+          </div>
+          <div
+            class="footer__contact--information col-xs-12 col-md-4 me-0 mt-5 justify-content-center"
+          >
+            <p>
+              <i class="fa fa-map-marker-alt fs-3"></i>
+              <span class="fs-5">Địa điểm</span>
+            </p>
+            <p>
+              <i class="fa fa-phone fs-3"></i>
+              <span class="fs-5">099999999i</span>
+            </p>
+            <p>
+              <i class="fa fa-envelope fs-5"></i>
+              <span class="fs-5">demo@gmail.com</span>
+            </p>
+          </div>
+          <div class="footer__contact--social col-xs-12 col-md-4 ca">
+            <h2 class="card-title text-capitalize">theo chúng tôi</h2>
+            <span>
+              <i class="fab fa-facebook-f fs-4 me-2 text-center"></i>
+              <i class="fab fa-twitter fs-4 me-2"></i>
+              <i class="fab fa-linkedin fs-4 me-2"></i>
+              <i class="fab fa-instagram fs-4 me-2"></i>
+            </span>
+          </div>
+        </div>
+        <div class="hr"></div>
+        <div class="footer__news row mt-4">
+          <h1 class="card-title text-capitalize fw-bolder">bản tin</h1>
+          <div class="row gx-0">
+            <form action="" class="form col">
+              <input
+                class="form-control col-xs-auto"
+                type="email"
+                name="email"
+                id="add"
+                placeholder="E-mail"
+              />
+            </form>
+
+            <label
+              for="add"
+              class="col-xs-auto w-8 btn btn-dark text-white text-uppercase"
+              >đặt mua</label
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
