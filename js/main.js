@@ -203,7 +203,7 @@ const dataWinner = [
     oldPrice: 250,
   },
   {
-    src: "imageWinter/áophôngdàitaybé trai-70k.jpg",
+    src: "imageWinter/áophôngdàitaybétrai-70k.png",
     name: "áo phao dài tay bé ",
     price: 70,
     oldPrice: 150,
@@ -221,7 +221,7 @@ const dataWinner = [
     oldPrice: 150,
   },
   {
-    src: "imageWinter/bộthểthaobé trai-130k.jpg",
+    src: "imageWinter/bộthểthaobétrai-130k.jpg",
     name: "bộ thể thao bé trai ",
     price: 130,
     oldPrice: 210,
@@ -275,7 +275,7 @@ const dataWinner = [
     oldPrice: 190,
   },
   {
-    src: "imageWinter/setbộ nỉ-150k.jpg",
+    src: "imageWinter/setbộnỉ-150k.jpg",
     name: "sét bộ nỉ",
     price: 150,
     oldPrice: 220,
@@ -397,7 +397,7 @@ const dataSummer = [
     oldPrice: 170,
   },
   {
-    src: "imageSummer/bộcàvạtxanhbé trai-90k.jpg",
+    src: "imageSummer/bộcàvạtxanhbétrai-90k.jpg",
     name: "bộ cà vạt xanh bé",
     price: 90,
     oldPrice: 140,
@@ -597,7 +597,7 @@ const dataSeller = [
     oldPrice: 320,
   },
   {
-    src: "imageWinter/bộthểthaobé trai-130k.jpg",
+    src: "imageWinter/bộthểthaobétrai-130k.jpg",
     name: "bộ thể thao bé trai ",
     price: 130,
     oldPrice: 210,
@@ -690,7 +690,7 @@ const dataPopular = [
     oldPrice: 250,
   },
   {
-    src: "imageWinter/áophôngdàitaybé trai-70k.jpg",
+    src: "imageWinter/áophôngdàitaybétrai-70k.png",
     name: "áo phao dài tay bé ",
     price: 70,
     oldPrice: 150,
@@ -810,10 +810,9 @@ loadDataSeller(1, 3);
 //showlist
 const loadFeautureList = (data, place, a, b, type) => {
   if (place) {
+    place.innerHTML = "";
     data.forEach((e, i) => {
-      if (i >= a - 1 && i <= b - 1) {
-        place.appendChild(render(e, i, type));
-      }
+      if (i >= a - 1 && i <= b - 1) place.appendChild(render(e, i, type));
     });
   }
 };
@@ -827,34 +826,64 @@ let totalPage = localStorage.getItem("totalPage") || 0;
 listTitle.forEach((s) => {
   s.innerText = title;
 });
-const loadDataListProduct = (title) => {
-  switch (title.length) {
-    case 31:
-      loadFeautureList(dataLunner, contents_list, 1, 6, "dataLunner");
+const loadDataListProduct = (title, page) => {
+  switch (title) {
+    case "dataLunner":
+      loadFeautureList(
+        dataLunner,
+        contents_list,
+        page * 6 + 1,
+        page * 6 + 6,
+        "dataLunner"
+      );
       totalPage = Math.ceil(dataLunner.length / 6);
       localStorage.setItem("totalPage", totalPage);
       loadpagination(totalPage);
       break;
-    case 34:
-      loadFeautureList(dataWinner, contents_list, 1, 6, "dataWinner");
+    case "dataWinner":
+      loadFeautureList(
+        dataWinner,
+        contents_list,
+        page * 6 + 1,
+        page * 6 + 6,
+        "dataWinner"
+      );
       totalPage = Math.ceil(dataWinner.length / 6);
       localStorage.setItem("totalPage", totalPage);
       loadpagination(totalPage);
       break;
-    case 30:
-      loadFeautureList(dataPopular, contents_list, 1, 6, "dataPopular");
+    case "dataPopular":
+      loadFeautureList(
+        dataPopular,
+        contents_list,
+        page * 6 + 1,
+        page * 6 + 6,
+        "dataPopular"
+      );
       totalPage = Math.ceil(dataPopular.length / 6);
       localStorage.setItem("totalPage", totalPage);
       loadpagination(totalPage);
       break;
-    case 35:
-      loadFeautureList(dataSeller, contents_list, 1, 6, "dataSeller");
+    case "dataSeller":
+      loadFeautureList(
+        dataSeller,
+        contents_list,
+        page * 6 + 1,
+        page * 6 + 6,
+        "dataSeller"
+      );
       totalPage = Math.ceil(dataSeller.length / 6);
       localStorage.setItem("totalPage", totalPage);
       loadpagination(totalPage);
       break;
     default:
-      loadFeautureList(dataSummer, contents_list, 1, 6, "dataSummer");
+      loadFeautureList(
+        dataSummer,
+        contents_list,
+        page * 6 + 1,
+        page * 6 + 6,
+        "dataSummer"
+      );
       totalPage = Math.ceil(dataSummer.length / 6);
       localStorage.setItem("totalPage", totalPage);
       loadpagination(totalPage);
@@ -863,50 +892,84 @@ const loadDataListProduct = (title) => {
 };
 // start pagination
 const pagination1 = document.querySelector(".pagination1");
+
 const rederPagination = (n) => {
   const li = document.createElement("li");
   li.className = "page-item";
-  li.innerHTML = `<span class="page-link">${n + 1}</span>`;
+  li.innerHTML = `<span onclick={changePage(this)} name=${
+    n + 1
+  } class="page-link ">${n + 1}</span>`;
   return li;
+};
+
+const loadActivePage = (activePage) => {
+  const active = localStorage.getItem("page") || 1;
+  const t = localStorage.getItem("totalPage");
+  console.log("activePage", activePage);
+  if (activePage) {
+    activePage.forEach((a) => {
+      const n = a.querySelector("span").innerText;
+      console.log(active);
+      if (n === active) a.classList.add("active");
+      else a.classList.remove("active");
+    });
+  }
+};
+window.onload = () => {
+  const activePage = document.querySelectorAll(".page-item");
+  loadActivePage(activePage);
+};
+const changePage = (e) => {
+  const typeData = localStorage.getItem("typeData");
+  const activePage = document.querySelectorAll(".page-item");
+  const totalPage = localStorage.getItem("totalPage");
+  localStorage.setItem("page", e.innerText);
+  loadDataListProduct(typeData, e.innerText - 1);
+  loadActivePage(activePage);
+  loadpagination(totalPage);
+  window.location.reload();
 };
 const loadpagination = (p) => {
   if (p > 1 && pagination1) {
+    pagination1.innerHTML = "";
     for (let i = 0; i < p; i++) {
       pagination1.appendChild(rederPagination(i));
     }
   }
 };
+
 ///end pagination
-loadDataListProduct(title);
+const typeData = localStorage.getItem("typeData");
+const page = localStorage.getItem("page");
+loadDataListProduct(typeData, page - 1);
 
 showListHover.forEach((l, i) => {
   l.addEventListener("mouseover", () => {
     const x = l.innerHTML;
-    console.log("x", x);
     const t = x.slice(0, x.indexOf("<"));
     localStorage.setItem("title", t);
   });
 });
 const showList = (e) => {
-  console.log(e);
   const z = e.innerHTML;
   const q = z.slice(0, z.indexOf("<"));
   localStorage.setItem("title", q);
+  localStorage.setItem("typeData", e.name);
+  localStorage.setItem("page", 1);
   listTitle.forEach((s) => {
     s.innerText = q;
   });
   if (contents_list) contents_list.innerHTML = "";
   if (pagination1) pagination1.innerHTML = "";
-  loadDataListProduct(q);
+  loadDataListProduct(e.name, 0);
+  // window.location.reload();
 };
 // showDetail
 let r;
 const showDetail = (e) => {
-  ramdomProduct();
   localStorage.setItem("title", title);
   const index = e.nextSibling.nextSibling.innerText;
   const data = e.nextSibling.nextSibling.nextSibling.nextSibling.innerText;
-  console.log(data);
   switch (data) {
     case "dataLunner":
       localStorage.setItem("detail", JSON.stringify(dataLunner[index]));
@@ -955,6 +1018,7 @@ const showDetail = (e) => {
       localStorage.setItem("random", r);
       break;
   }
+  ramdomProduct(r);
 };
 
 //detail
@@ -964,8 +1028,6 @@ const name__product = document.querySelector(".name__product");
 const examProduct = document.querySelector(".examProduct");
 const sale2 = parseInt(detail.oldPrice) - parseInt(detail.price);
 const result2 = Math.ceil((sale2 / parseInt(detail.oldPrice)) * 100);
-console.log(detail);
-console.log(detail__product);
 const div = document.createElement("div");
 div.innerHTML = `
                 <div class="row">
@@ -1008,7 +1070,6 @@ if (detail__product && name__product) {
   name__product.innerText = detail.name;
 }
 const loadExamProduct = (data, i, type) => {
-  console.log("data", data);
   const div2 = document.createElement("div");
   div2.className = "col-xs-6 col-md-12 h-15 overflow-hidden item__product";
   div2.innerHTML = `
@@ -1035,11 +1096,12 @@ const loadExamProduct = (data, i, type) => {
              `;
   return div2;
 };
-console.log(examProduct);
 const dataType = localStorage.getItem("typeData");
-const ramdom = localStorage.getItem("ramdom");
+
 const loadDataLunner2 = (typeData, a, b, type) => {
   if (examProduct) {
+    console.log("a", a);
+    console.log("b", b);
     typeData.forEach((e, i) => {
       if (i >= a - 1 && i <= b - 1) {
         examProduct.appendChild(loadExamProduct(e, i, type));
@@ -1048,34 +1110,30 @@ const loadDataLunner2 = (typeData, a, b, type) => {
   }
 };
 
-const ramdomProduct = () => {
+const ramdomProduct = (r) => {
   switch (dataType) {
     case "dataLunner":
-      loadDataLunner2(dataLunner, ramdom, ramdom + 3, "dataLunner");
+      loadDataLunner2(dataLunner, r, r + 3, "dataLunner");
       break;
     case "dataProductFeauture":
-      loadDataLunner2(
-        dataProductFeauture,
-        ramdom,
-        ramdom + 3,
-        "dataProductFeauture"
-      );
+      loadDataLunner2(dataProductFeauture, r, r + 3, "dataProductFeauture");
       break;
     case "dataWinner":
-      loadDataLunner2(dataWinner, ramdom, ramdom + 3, "dataWinner");
+      loadDataLunner2(dataWinner, r, r + 3, "dataWinner");
       break;
     case "dataSeller":
-      loadDataLunner2(dataSeller, ramdom, ramdom + 3, "dataSeller");
+      loadDataLunner2(dataSeller, r, r + 3, "dataSeller");
       break;
     case "dataPopular":
-      loadDataLunner2(dataPopular, ramdom, ramdom + 3, "dataPopular");
+      loadDataLunner2(dataPopular, r, r + 3, "dataPopular");
       break;
     default:
-      loadDataLunner2(dataSummer, ramdom, ramdom + 3, "dataSummer");
+      loadDataLunner2(dataSummer, r, r + 3, "dataSummer");
       break;
   }
 };
-ramdomProduct();
+const r2 = localStorage.getItem("random");
+ramdomProduct(r2);
 
 //login ||registered
 const login = document.querySelector(".login");
@@ -1093,7 +1151,6 @@ const loadFrom = () => {
   }
 };
 const account = (e) => {
-  console.log(e.name);
   localStorage.setItem("form", e.name);
   loadFrom();
 };

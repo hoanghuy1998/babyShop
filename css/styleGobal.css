@@ -28,6 +28,9 @@
 .h-20 {
   height: 20rem !important; }
 
+.min-h-20 {
+  min-height: 20rem; }
+
 .m-h-15 {
   max-height: 15rem; }
 

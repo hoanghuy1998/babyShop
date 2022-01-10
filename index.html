@@ -91,15 +91,19 @@
         >
           <div class="list-group align-items-center">
             <a
-              href="listProduct.html"
-              class="list-group-item showList list-group-item-action list-group-item-primary text-dark"
+              href="./listProduct.html"
+              name="dataLunner"
+              onclick="{showList(this)}"
+              class="list-group-item list-group-item-action list-group-item-info text-dark"
               >Quần Áo Ngày Tết
               <sup class="badge bg-danger border rounded-circle text-white"
                 >hot</sup
               ></a
             >
             <a
-              href="listProduct.html"
+              href="./listProduct.html"
+              onclick="{showList(this)}"
+              name="dataWinner"
               class="list-group-item showList list-group-item-action list-group-item-info text-dark position-relative"
               >Thời Trang Mùa Đông
               <sup
@@ -108,12 +112,16 @@
               ></a
             >
             <a
-              href="listProduct.html"
+              href="./listProduct.html"
+              href="#"
+              name="dataPopular"
               class="list-group-item showList list-group-item-action list-group-item-info text-dark"
               >Quần áo Thịnh hành
             </a>
             <a
-              href="listProduct.html"
+              href="./listProduct.html"
+              name="dataSeller"
+              onclick="{showList(this)}"
               class="list-group-item showList list-group-item-action list-group-item-info text-dark position-relative"
               >Mẫu Quần Áo Bán Chạy
               <sup
@@ -123,7 +131,9 @@
             </a>
 
             <a
-              href="listProduct.html"
+              href="./listProduct.html"
+              name="dataSummer"
+              onclick="{showList(this)}"
               class="list-group-item showList list-group-item-action list-group-item-info text-dark"
               >Thời Trang Mùa Hè
             </a>
@@ -151,41 +161,21 @@
               </div>
             </div>
             <div class="hr"></div>
-            <div class="card w-100 text-center list-group-item-info">
-              <img
-                src="./resoures/imagebook/avata.jpg"
-                class="rounded-3 card-img-top w-75 h-10 m-auto mt-3"
-                alt="..."
-              />
-              <div class="card-body">
-                <h5 class="card-title text-capitalize">hoàng huy</h5>
-                <strong class="card-title text-capitalize text-success"
-                  ><i
-                    class="fa fa-phone me-2 text-warning"
-                    aria-hidden="true"
-                  ></i
-                  >0939 302 471</strong
-                >
-              </div>
-            </div>
-            <div class="hr"></div>
-            <div class="card w-100 text-center list-group-item-info">
-              <img
-                src="./resoures/imagebook/avata.jpg"
-                class="rounded-3 card-img-top w-75 h-10 m-auto mt-3"
-                alt="..."
-              />
-              <div class="card-body">
-                <h5 class="card-title text-capitalize">hoàng huy</h5>
-                <strong class="card-title text-capitalize text-success"
-                  ><i
-                    class="fa fa-phone me-2 text-warning"
-                    aria-hidden="true"
-                  ></i
-                  >0939 302 471</strong
-                >
-              </div>
-            </div>
+          </div>
+          <div
+            class="list-group align-items-center border-1 text-dark mt-5 w-100"
+          >
+            <strong
+              class="text-center fw-bolder text-uppercase list-group-item list-group-item-action list-group-item-primary text-danger"
+              >địa chỉ cửa hàng</strong
+            >
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5420.656418888526!2d105.85087859458011!3d21.038075908697!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135abad68ac48e9%3A0xcf422b450843c393!2sBaby%20shop%208888!5e0!3m2!1svi!2s!4v1641739915199!5m2!1svi!2s"
+              class="w-100 min-h-20"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+            ></iframe>
           </div>
         </section>
         <section
@@ -257,6 +247,8 @@
             <div class="row mx-1">
               <a
                 href="./listProduct.html"
+                onclick="{showList(this)}"
+                name=""
                 class="card-title text-capitalize col-12 showList gotoList fw-bolder text-danger fs-4"
                 >sản phẩm nổi bật
               </a>
@@ -268,7 +260,9 @@
           <div class="main__product bg-light mt-3 pt-4">
             <div class="row mx-1">
               <a
+                onclick="{showList(this)}"
                 href="./listProduct.html"
+                name="dataLunner"
                 class="card-title text-capitalize col-12 showList gotoList fw-bolder text-danger fs-4"
                 >quần áo ngày tết
               </a>
@@ -280,7 +274,9 @@
           <div class="main__product bg-light mt-3 pt-4">
             <div class="row mx-1">
               <a
+                name="dataWinner"
                 href="./listProduct.html"
+                onclick="{showList(this)}"
                 class="card-title text-capitalize col-12 showList gotoList fw-bolder text-danger fs-4"
                 >quần áo mùa đông
               </a>
@@ -292,7 +288,9 @@
           <div class="main__product bg-light mt-3 pt-4">
             <div class="row mx-1">
               <a
+                name="dataPopular"
                 href="./listProduct.html"
+                onclick="{showList(this)}"
                 class="card-title text-capitalize col-12 showList gotoList fw-bolder text-danger fs-4"
                 >quần áo thịnh hành
               </a>
@@ -304,7 +302,9 @@
           <div class="main__product bg-light mt-3 pt-4">
             <div class="row mx-1">
               <a
+                name="dataSeller"
                 href="./listProduct.html"
+                onclick="{showList(this)}"
                 class="card-title text-capitalize col-12 showList gotoList fw-bolder text-danger fs-4"
                 >sản phẩm bán chạy
               </a>
@@ -315,7 +315,13 @@
           </div>
           <div class="main__product bg-light mt-3 pt-4">
             <div class="row mx-1">
-              <h2 class="card-title text-capitalize col-12">quần áo mùa hè</h2>
+              <a
+                name="dataSummer"
+                href="./listProduct.html"
+                onclick="{showList(this)}"
+                class="card-title text-capitalize col-12 showList gotoList fw-bolder text-danger fs-4"
+                >quần áo mùa hè
+              </a>
             </div>
             <div
               class="main__product--item summner__product row gx-4 mt-3 px-1 pe-1"
